@@ -12,3 +12,7 @@ A complete tutorial on how to make this type of game could be created if I find 
 
 - Assets come from http://www.mariouniverse.com/.  
   Thanks to « Lotos » for sharing.
+
+# Demo
+
+![game demo](https://community.gamebuino.com/uploads/default/original/1X/83a8947efd9a6c40411def15ed381b50bd1f9747.gif)
