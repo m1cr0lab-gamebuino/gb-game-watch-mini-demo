@@ -18,8 +18,6 @@
 // includes the official library
 #include <Gamebuino-Meta.h>
 
-#include "ScreenRecorder.h"
-
 // includes assets
 #include "background.h"
 #include "spritesheet.h"
@@ -208,8 +206,6 @@ void setup() {
     // default screen buffer won't be used
     // so it must be set to 0x0 pixels
     gb.display.init(0, 0, ColorMode::rgb565);
-
-    ScreenRecorder::init(SLICE_HEIGHT);
 }
 
 // -------------------------------------------------------------------------
@@ -301,8 +297,6 @@ void draw() {
         if (sliceIndex != 0) waitForPreviousDraw();
         // after which we can then send the current buffer
         customDrawBuffer(0, sliceY, buffer, SCREEN_WIDTH, SLICE_HEIGHT);
-
-        ScreenRecorder::monitor(buffer, sliceIndex);
     }
 
     // always wait until the DMA transfer is completed
