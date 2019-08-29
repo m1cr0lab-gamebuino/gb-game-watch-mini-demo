@@ -8,7 +8,7 @@ A complete tutorial on how to make this type of game could be created if I find 
 
 # Acknowledgements
 
-- Many thanks to [Andy O'Neil](https://gamebuino.com/@aoneill) for the magical routines related to the DMA controller (very valuable to tackling High Definition `160x128` on the Gamebuino META).
+- Many thanks to [Andy O'Neill](https://gamebuino.com/@aoneill) for the magical routines related to the DMA controller (very valuable to tackling High Definition `160x128` on the Gamebuino META).
 
 - Assets come from http://www.mariouniverse.com/.  
   Thanks to « Lotos » for sharing.
