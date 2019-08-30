@@ -1,5 +1,5 @@
 // -------------------------------------------------------------------------
-// Game Watch Mini Demo © 2019 Steph (https://gamebuino.com/@steph)
+// Game & Watch Mini Demo © 2019 Steph (https://gamebuino.com/@steph)
 // -------------------------------------------------------------------------
 // Many thanks to Andy (https://gamebuino.com/@aoneill) for the magical
 // routines related to the DMA controller (very valuable to tackling
@@ -8,12 +8,11 @@
 // Assets come from http://www.mariouniverse.com/
 // Thanks to « Lotos » for sharing.
 // -------------------------------------------------------------------------
-// This code is a starting point for the implementation of a High Res game
-// for the Gamebuino META, inspired by Nintendo's Game Watch console series.
+// This code is a starting point for the implementation of games inspired by
+// Nintendo's Game & Watch console series, in High Definition on the META.
 // I wrote it in haste to help Jicehel realize the project of his dreams...
 // => To watch for on https://gamebuino.com/@jicehel :)
 // -------------------------------------------------------------------------
-
 
 // includes the official library
 #include <Gamebuino-Meta.h>
@@ -170,6 +169,12 @@ struct Player {
     uint32_t jump_timer;
 };
 
+Player player = {
+    0,      // sprite_index
+    false,  // jumping
+    0       // jump_timer
+};
+
 // -------------------------------------------------------------------------
 // Initialization related to the DMA controller
 // -------------------------------------------------------------------------
@@ -191,14 +196,8 @@ uint16_t buffer2[SCREEN_WIDTH * SLICE_HEIGHT];
 bool drawPending = false;
 
 // -------------------------------------------------------------------------
-// Initialization
+// Initialization of the META
 // -------------------------------------------------------------------------
-
-Player player = {
-    0,      // sprite_index
-    false,  // jumping
-    0       // jump_timer
-};
 
 void setup() {
     // initializes the META
