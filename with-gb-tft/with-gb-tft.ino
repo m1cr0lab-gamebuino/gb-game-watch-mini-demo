@@ -1,9 +1,17 @@
 // -------------------------------------------------------------------------
 // Game & Watch Mini Demo © 2019 Steph (https://gamebuino.com/@steph)
 // -------------------------------------------------------------------------
+// This version does not rely on the use of `gb.display`, but rather uses
+// the low-level `gb.tft` API to fully exploit the RGB565 color space
+// (although it is not necessary here).
+// 
+// The graphic rendering is cleverly calculated on two partial framebuffers,
+// which are alternately transmitted to the DMA controller, which acts as
+// an intermediary with the display device.
+// 
 // Many thanks to Andy (https://gamebuino.com/@aoneill) for the magical
-// routines related to the DMA controller (very valuable to tackling
-// High Definition 160x128 on the META).
+// routines related to the DMA controller (very useful to tackling 160x128
+// High Definition on the META).
 // -------------------------------------------------------------------------
 // Assets come from http://www.mariouniverse.com/
 // Thanks to « Lotos » for sharing.
@@ -28,7 +36,7 @@
 const uint8_t  SCREEN_WIDTH  = 160;
 const uint8_t  SCREEN_HEIGHT = 128; 
 const uint8_t  SLICE_HEIGHT  = 8;
-const uint16_t TRANS_COLOR   = 0xffff;
+const uint16_t TRANS_COLOR   = 0xfbd6;
 
 // -------------------------------------------------------------------------
 // Sprites
